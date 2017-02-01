@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arithmetic Calculater</title>
+	<style>
+		div input {
+    		display: inline-block;
+    		vertical-align: middle;
+    		margin: 10px;
+    		padding: 10px;
+		}
+		button{
+		    font-size: 2em;
+		    width: 250px;
+		    /*background-color: darkgrey;*/
+		    background-color: cadetblue;
+		    cursor: pointer;
+		    color: whitesmoke;
+		}
+		.text{
+			width: 316px;
+		    display: inline-table;
+		    font-size: 25px;
+		    font-style: italic;
+		    font-family: serif;
+		    color: burlywood;
+		}
+		.result{
+			display: inline-table;
+		    font-size: 35px;
+		    margin-left: 75px;
+		    /* background: #1768E8; */
+		    /*border-radius: 2px;*/
+		    /*border: 1px solid blue;*/
+		    padding: 2px;
+		    /* color: white; */
+		    margin-top: 6px;
+		}
+		
+		select{
+    		width: 194px;
+		    height: 35px;
+		    color: whitesmoke;
+		    font-size: 20px;
+		    margin-left: 9px;
+		    background-color: cadetblue;
+		}
+
+	</style>
+
+</head>
+<body>
+	<div>
+		{% block content %}
+		<form action="" method="GET"> {% csrf_token %}
+		    <fieldset>
+  				<legend>Roman Arithmetic:</legend>
+		    <div>
+			    <span class="text">Enter First Roman operant : </span>
+			    <input type="text" name="first_operator" placeholder="Enter in capital" required>
+		    </div>
+			<div>
+				<span class="text">Enter Second Roman operant : </span>
+				<input type="text" name="second_operator" placeholder="Enter in capital" required>
+			</div>
+			<div>
+				<span class="text">Enter operator :</span>
+				<!-- <input type="text" name="operator" placeholder="Enter operator" required> -->
+				<select name="operator" required>
+					<option value="">Please select</option>
+					<option value="+">+</option>
+					<option value="-">-</option>
+					<option value="*">*</option>
+					<option value="/">/</option>
+				</select>
+			</div>
+			<div>
+				<button>Result</button>
+				<span class="result">{{result}}</span>
+			</div>
+		</fieldset>
+		</form>
+		{% endblock %}
+	</div>
+</body>
+</html>
+<!-- pattern="^(?=[MDCLXVI])M*(C[MD]|D?C*)(X[CL]|L?X*)(I[XV]|V?I*)$" -->
+
+<!-- pattern = '^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$' -->
+
+<!-- 
+Result &nbsp {{first}} {{operator}} {{second}} = {{output}} -->
