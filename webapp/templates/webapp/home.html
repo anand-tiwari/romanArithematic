@@ -4,37 +4,30 @@
 	<meta charset="UTF-8">
 	<title>Arithmetic Calculater</title>
 	<style>
+	    body{
+			background-color: #F7F7F7;
+	    }
+
 		div input {
     		display: inline-block;
     		vertical-align: middle;
     		margin: 10px;
     		padding: 10px;
 		}
-		button{
-		    font-size: 2em;
-		    width: 250px;
-		    /*background-color: darkgrey;*/
-		    background-color: cadetblue;
-		    cursor: pointer;
-		    color: whitesmoke;
-		}
+		
 		.text{
 			width: 316px;
 		    display: inline-table;
 		    font-size: 25px;
 		    font-style: italic;
 		    font-family: serif;
-		    color: burlywood;
+		    color: #333333;
 		}
 		.result{
 			display: inline-table;
 		    font-size: 35px;
 		    margin-left: 75px;
-		    /* background: #1768E8; */
-		    /*border-radius: 2px;*/
-		    /*border: 1px solid blue;*/
 		    padding: 2px;
-		    /* color: white; */
 		    margin-top: 6px;
 		}
 		
@@ -42,9 +35,32 @@
     		width: 194px;
 		    height: 35px;
 		    color: whitesmoke;
-		    font-size: 20px;
+		    font-size: 16px;
 		    margin-left: 9px;
-		    background-color: cadetblue;
+		    background-color: #0da1fd;
+		}
+		
+		fieldset{
+			border: 1px solid #ccc;
+		}
+		legend{
+			color: #0da1fd;
+		}
+		button{
+		    padding: 10px;
+		    font-size: 1.2em;
+		    width: 250px;
+		    color: #0da1fd;
+		    border-width: inherit;
+		    background-color: #ffffff;
+		    cursor: pointer;
+		    border: 1px solid #0da1fd;
+		    transition: all 0.3s ease;
+		}
+
+		button:hover{
+			color: #fff;
+			background-color: #0da1fd; 
 		}
 
 	</style>
@@ -75,7 +91,7 @@
 					<option value="/">/</option>
 				</select>
 			</div>
-			<div>
+			<div style="margin-top: 20px;">
 				<button>Result</button>
 				<span class="result">{{result}}</span>
 			</div>
@@ -85,9 +101,3 @@
 	</div>
 </body>
 </html>
-<!-- pattern="^(?=[MDCLXVI])M*(C[MD]|D?C*)(X[CL]|L?X*)(I[XV]|V?I*)$" -->
-
-<!-- pattern = '^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$' -->
-
-<!-- 
-Result &nbsp {{first}} {{operator}} {{second}} = {{output}} -->
