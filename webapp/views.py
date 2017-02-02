@@ -54,6 +54,8 @@ def roman_arithematic_operation(first_roman_number, second_roman_number, operato
     try:
         first_integer_number = roman_to_int(first_roman_number)
         second_integer_number = roman_to_int(second_roman_number)
+        if first_integer_number<second_integer_number and (operator == "-" or operator == "/"):
+            return "First roman nubmer should be greater than second"
         result = ""
         if first_integer_number is not None and second_integer_number is not None:
             if operator == "+":
